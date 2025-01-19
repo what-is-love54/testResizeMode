@@ -11,7 +11,7 @@
 2. Start the app
 
    ```bash
-    expo start && expo start --ios
+    yarn ios
    ```
 
 
