@@ -1,3 +1,5 @@
+/** @format */
+
 module.exports = function (api) {
 	api.cache(true);
 	return {
@@ -15,7 +17,7 @@ module.exports = function (api) {
 					cwd: 'babelrc',
 					extensions: ['.ts', '.tsx', '.js', '.ios.js', '.android.js'],
 					alias: {
-						'~': './mainSrc',
+						'~': './app',
 					},
 				},
 			],
