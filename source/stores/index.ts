@@ -1,3 +1,5 @@
+/** @format */
+
 import {createContext} from 'react';
 // -----------------------------------------------------------------------------
 import {TStore} from '~/types';

@@ -6,22 +6,13 @@ module.exports = function (api) {
 		presets: ['babel-preset-expo'],
 		plugins: [
 			[
-				'@babel/plugin-proposal-decorators',
+				'module-resolver',
 				{
-					legacy: true,
-				},
-			],
-			[
-				require.resolve('babel-plugin-module-resolver'),
-				{
-					cwd: 'babelrc',
-					extensions: ['.ts', '.tsx', '.js', '.ios.js', '.android.js'],
 					alias: {
-						'~': './app',
+						'~': './source',
 					},
 				},
 			],
-			'react-native-reanimated/plugin',
 		],
 	};
 };

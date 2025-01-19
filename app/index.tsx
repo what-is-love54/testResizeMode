@@ -5,12 +5,11 @@ import {NavigationIndependentTree} from '@react-navigation/native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // -----------------------------------------------------------------------------
-import HomeScreen from './screens/HomeScreen';
-import DetailsScreen from './screens/DetailsScreen';
+import {HomeScreen, DetailsScreen} from '~/screens';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
+const Application = () => {
 	return (
 		<NavigationIndependentTree>
 			<NavigationContainer>
@@ -29,4 +28,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default Application;
