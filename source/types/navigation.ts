@@ -3,6 +3,9 @@
 export type TNavigate = {
 	// initial -----------------------------------------------------------------
 	AppScreen: undefined;
+	TabScreen: undefined;
 	// common ------------------------------------------------------------------
-	OnboardScreen: undefined;
+	CustomResizeScreen: undefined;
+	FirstLibResizeScreen: undefined;
+	SecondLibResizeScreen: undefined;
 };

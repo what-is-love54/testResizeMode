@@ -1,31 +1,42 @@
 /** @format */
 
 import React from 'react';
+import {StyleSheet} from 'react-native';
 import {NavigationIndependentTree} from '@react-navigation/native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {
+	initialWindowMetrics,
+	SafeAreaProvider,
+} from 'react-native-safe-area-context';
 // -----------------------------------------------------------------------------
-import {HomeScreen, DetailsScreen} from '~/screens';
+import {deviceStore, StoresController} from '~/stores';
+import {navigationRef} from '~/utils';
+import {NaviController} from '~/navigation';
 
 const Stack = createNativeStackNavigator();
 
 const Application = () => {
 	return (
-		<NavigationIndependentTree>
-			<NavigationContainer>
-				<Stack.Navigator initialRouteName="Home">
-					<Stack.Screen
-						name="Home"
-						component={HomeScreen}
-					/>
-					<Stack.Screen
-						name="Details"
-						component={DetailsScreen}
-					/>
-				</Stack.Navigator>
-			</NavigationContainer>
-		</NavigationIndependentTree>
+		<StoresController.Provider value={{deviceStore}}>
+			<GestureHandlerRootView style={root_style.container}>
+				<SafeAreaProvider initialMetrics={initialWindowMetrics}>
+					<NavigationIndependentTree>
+						<NavigationContainer ref={navigationRef}>
+							<NaviController />
+						</NavigationContainer>
+					</NavigationIndependentTree>
+				</SafeAreaProvider>
+			</GestureHandlerRootView>
+		</StoresController.Provider>
 	);
 };
 
 export default Application;
+
+const root_style = StyleSheet.create({
+	container: {
+		flex: 1,
+	},
+});

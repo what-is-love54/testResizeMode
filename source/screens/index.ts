@@ -1,4 +1,5 @@
 /** @format */
 
-export * from './HomeScreen';
-export * from './DetailsScreen';
+export * from './CustomResizeScreen';
+export * from './FirstLibScreen';
+export * from './SecondLibScreen';
