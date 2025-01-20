@@ -6,7 +6,6 @@ import {
 	widthPercentageToDP as wp,
 	heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-
 // -----------------------------------------------------------------------------
 import {color, deviceOrientation} from '~/constants';
 import {TEventsItem} from '~/types';
@@ -109,14 +108,14 @@ const upcoming_style = StyleSheet.create({
 	upcomingItemContainer: {
 		flex: 1,
 		borderRadius: wp(1),
-		borderWidth: wp(1),
+		borderWidth: wp(0.3),
 		borderColor: color.g_black,
 		backgroundColor: color.g_white,
 		marginBottom: wp(5),
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		padding: wp(3),
+		padding: wp(1),
 	},
 	upcomingTeamsRightContainer: {
 		flex: 1,

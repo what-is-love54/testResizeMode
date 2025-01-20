@@ -4,6 +4,10 @@ import React, {useCallback, useEffect} from 'react';
 import {StyleSheet, FlatList} from 'react-native';
 import {observer} from 'mobx-react';
 import {moderateScale} from 'react-native-size-matters';
+import {
+	widthPercentageToDP as wp,
+	heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 // -----------------------------------------------------------------------------
 import {useOrientation, useStores} from '~/hooks';
 import {Insets, VerticalSeparatorView} from '~/components';
@@ -69,6 +73,6 @@ export const SecondLibScreen = observer(() => {
 
 const styles = StyleSheet.create({
 	container: {
-		paddingHorizontal: moderateScale(16),
+		paddingHorizontal: wp(6),
 	},
 });
