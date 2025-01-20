@@ -16,7 +16,7 @@ type TProps = {
 };
 
 export const Insets: React.FC<TProps> = memo(
-	({children, styles, isTopInset = true, isBotInset = true}) => {
+	({children, styles, isTopInset = true, isBotInset = true}: TProps) => {
 		const {top, bottom} = useSafeAreaInsets();
 
 		return (

@@ -2,7 +2,13 @@
 
 module.exports = {
 	root: true,
-	extends: ['@react-native', 'prettier', 'expo'],
+	extends: [
+		'@react-native',
+		'eslint:recommended',
+		// 'plugin:react/recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:prettier/recommended',
+	],
 	env: {
 		browser: true,
 		es2021: true,
@@ -10,6 +16,11 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
+	},
+	settings: {
+		react: {
+			version: 'detect',
+		},
 	},
 	rules: {
 		indent: ['error', 'tab', {SwitchCase: 1}],
@@ -41,6 +52,8 @@ module.exports = {
 			},
 		],
 		'react/jsx-no-undef': ['warn', {allowGlobals: true}],
+		'@typescript-eslint/no-inferrable-types': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
 	},
 	ignorePatterns: ['node_modules'],
 };

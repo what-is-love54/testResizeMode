@@ -6,3 +6,5 @@ android/**
 assets/**
 .expo-shared
 .expo
+metro.config.js
+expo-env.d.ts

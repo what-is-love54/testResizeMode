@@ -6,13 +6,13 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TNavigate} from '~/types';
 import {color as colors, Routes} from '~/constants';
 import {CustomResizeScreen, FirstLibScreen, SecondLibScreen} from '~/screens';
-import {RouteProp} from '@react-navigation/core';
+
 const TabController = createBottomTabNavigator<TNavigate>();
 
-export const TabNavi: React.FC<any> = () => {
+export const TabNavi = () => {
 	return (
 		<TabController.Navigator
-			screenOptions={({route}: {route: RouteProp<TNavigate>}) => ({
+			screenOptions={() => ({
 				headerShown: false,
 				tabBarShowLabel: true,
 				tabBarActiveTintColor: colors.g_green,

@@ -8,7 +8,7 @@ import {deviceWidth, deviceHeight} from '~/constants';
 const baseWidth = 390;
 const baseHeight = 690;
 
-// ---------------------------------MAIN_CALCULATION--------------------------------------
+// ---------------------------------MAIN_CALCULATION----------------------------
 
 const scaleWidth = deviceWidth / baseWidth;
 const scaleHeight = deviceHeight / baseHeight;
@@ -26,9 +26,9 @@ const convertHeightPixelsToPercent = (heightInPx: number) =>
 const convertWidthPixelsToPercent = (widthInPx: number) =>
 	widthInPx / baseWidth;
 
-// ---------------------------------MAIN_CALCULATION--------------------------------------
+// ---------------------------------MAIN_CALCULATION----------------------------
 
-// ---------------------------------USABLE_PARAMS--------------------------------------
+// ---------------------------------USABLE_PARAMS-------------------------------
 
 export const calcHeight = (px: number) => {
 	return heightPixelRatio(convertHeightPixelsToPercent(px));
@@ -42,4 +42,4 @@ export const calcSize = (px: number) =>
 
 export const calcFontSize = (size: number) => size * fontScale;
 
-// --------------------------------USABLE_PARAMS---------------------------------------
+// --------------------------------USABLE_PARAMS--------------------------------
