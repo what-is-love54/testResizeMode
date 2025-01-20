@@ -1,13 +1,8 @@
 /** @format */
 
 import React, {memo} from 'react';
-import {Image, View} from 'react-native';
-import {
-	scale,
-	verticalScale,
-	moderateScale,
-	ScaledSheet,
-} from 'react-native-size-matters';
+import {Image, StyleSheet, View} from 'react-native';
+import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 // -----------------------------------------------------------------------------
 import {color, deviceOrientation} from '~/constants';
 import {TEventsItem} from '~/types';
@@ -108,18 +103,18 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 	},
 );
 
-const upcoming_style = ScaledSheet.create({
+const upcoming_style = StyleSheet.create({
 	upcomingItemContainer: {
 		flex: 1,
-		borderRadius: '6@ms',
-		borderWidth: '1@ms',
+		borderRadius: moderateScale(6),
+		borderWidth: moderateScale(1),
 		borderColor: color.g_black,
 		backgroundColor: color.g_white,
-		marginBottom: '16@ms',
+		marginBottom: moderateScale(16),
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		padding: '8@ms',
+		padding: moderateScale(8),
 	},
 	upcomingTeamsRightContainer: {
 		flex: 1,
@@ -137,6 +132,6 @@ const upcoming_style = ScaledSheet.create({
 		flex: 2,
 	},
 	horizontalImageTeam: {
-		marginRight: '4@ms',
+		marginRight: moderateScale(4),
 	},
 });
