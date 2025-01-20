@@ -2,11 +2,15 @@
 
 import React, {memo} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
+import {
+	widthPercentageToDP as wp,
+	heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+
 // -----------------------------------------------------------------------------
 import {color, deviceOrientation} from '~/constants';
 import {TEventsItem} from '~/types';
-import {nths} from '~/utils';
+import {calcFontSize, nths} from '~/utils';
 import {Typography, VerticalSeparatorView} from '~/components';
 
 export const EventsViewItem: React.FC<TEventsItem> = memo(
@@ -21,12 +25,10 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 		orientation,
 	}) => {
 		const imageWidth =
-			orientation === deviceOrientation.portrait ? scale(40) : scale(20);
+			orientation === deviceOrientation.portrait ? wp(8) : wp(4);
 
 		const imageHeight =
-			orientation === deviceOrientation.portrait
-				? verticalScale(40)
-				: verticalScale(20);
+			orientation === deviceOrientation.portrait ? hp(8) : hp(4);
 
 		return (
 			<View style={upcoming_style.upcomingItemContainer}>
@@ -41,7 +43,7 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 					/>
 
 					<Typography
-						size={moderateScale(14, 0.4)}
+						size={calcFontSize(14)}
 						weight={'regular'}
 						alignHorizontal={'center'}
 						colorText={color.g_black}
@@ -52,7 +54,7 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 
 				<View style={upcoming_style.upcomingTeamsCenterContainer}>
 					<Typography
-						size={moderateScale(14, 0.4)}
+						size={calcFontSize(14)}
 						weight={'regular'}
 						alignHorizontal={'center'}
 					>
@@ -62,7 +64,7 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 					<VerticalSeparatorView pad={2} />
 
 					<Typography
-						size={moderateScale(18, 0.4)}
+						size={calcFontSize(18)}
 						weight={'500'}
 						alignHorizontal={'center'}
 					>
@@ -72,7 +74,7 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 					<VerticalSeparatorView pad={2} />
 
 					<Typography
-						size={moderateScale(14, 0.4)}
+						size={calcFontSize(14)}
 						weight={'regular'}
 						alignHorizontal={'center'}
 					>
@@ -91,7 +93,7 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 					/>
 
 					<Typography
-						size={moderateScale(14, 0.4)}
+						size={calcFontSize(14)}
 						weight={'regular'}
 						alignHorizontal={'center'}
 					>
@@ -106,15 +108,15 @@ export const EventsViewItem: React.FC<TEventsItem> = memo(
 const upcoming_style = StyleSheet.create({
 	upcomingItemContainer: {
 		flex: 1,
-		borderRadius: moderateScale(6),
-		borderWidth: moderateScale(1),
+		borderRadius: wp(1),
+		borderWidth: wp(1),
 		borderColor: color.g_black,
 		backgroundColor: color.g_white,
-		marginBottom: moderateScale(16),
+		marginBottom: wp(5),
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		padding: moderateScale(8),
+		padding: wp(3),
 	},
 	upcomingTeamsRightContainer: {
 		flex: 1,
@@ -132,6 +134,6 @@ const upcoming_style = StyleSheet.create({
 		flex: 2,
 	},
 	horizontalImageTeam: {
-		marginRight: moderateScale(4),
+		marginRight: wp(1),
 	},
 });
