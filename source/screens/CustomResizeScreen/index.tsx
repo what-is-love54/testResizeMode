@@ -7,7 +7,7 @@ import {observer} from 'mobx-react';
 import {useOrientation, useStores} from '~/hooks';
 import {Insets, VerticalSeparatorView} from '~/components';
 import {TTeam} from '~/types';
-import {dateFormatHelper} from '~/utils';
+import {calcSize, dateFormatHelper} from '~/utils';
 import {deviceOrientation} from '~/constants';
 // -----------------------------------------------------------------------------
 import {EventsViewItem} from './components';
@@ -68,9 +68,6 @@ export const CustomResizeScreen = observer(() => {
 
 const styles = StyleSheet.create({
 	container: {
-		paddingHorizontal: 16,
-	},
-	columns: {
-		columnGap: 16,
+		paddingHorizontal: calcSize(16),
 	},
 });
