@@ -5,7 +5,7 @@ import {StatusBar} from 'react-native';
 import {observer} from 'mobx-react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // -----------------------------------------------------------------------------
-import {useStores} from '~/hooks';
+import {useInit, useStores} from '~/hooks';
 import {color, Routes} from '~/constants';
 import {TNavigate} from '~/types';
 // -----------------------------------------------------------------------------
@@ -14,6 +14,8 @@ import {TabNavi} from './tabNavi';
 const Controller = createNativeStackNavigator<TNavigate>();
 
 export const NaviController = observer(() => {
+	useInit();
+
 	const {
 		deviceStore: {
 			isHydratedPhoneStorage,

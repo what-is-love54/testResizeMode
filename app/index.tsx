@@ -14,6 +14,7 @@ import {enableScreens} from 'react-native-screens';
 import {deviceStore, StoresController} from '~/stores';
 import {navigationRef} from '~/utils';
 import {NaviController} from '~/navigation';
+import {color} from '~/constants';
 
 enableScreens();
 

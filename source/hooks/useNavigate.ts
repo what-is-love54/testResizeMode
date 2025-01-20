@@ -11,21 +11,21 @@ export const useNavigate = () => {
 	const nav = useNavigation<NativeStackNavigationProp<TNavigate>>();
 
 	const navigate = useCallback(
-		(route: TNavigate, params?: any) => {
+		(route: TNavigate | any, params?: any) => {
 			return nav.navigate(route, params);
 		},
 		[nav],
 	);
 
 	const push = useCallback(
-		(route: TNavigate, params?: any) => {
+		(route: TNavigate | any, params?: any) => {
 			return nav.push(route, params);
 		},
 		[nav],
 	);
 
 	const replace = useCallback(
-		(route: TNavigate, params?: any) => {
+		(route: TNavigate | any, params?: any) => {
 			return nav.replace(route, params);
 		},
 		[nav],

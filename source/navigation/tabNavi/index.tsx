@@ -17,6 +17,11 @@ export const TabNavi = () => {
 				tabBarShowLabel: true,
 				tabBarActiveTintColor: colors.g_green,
 				tabBarInactiveTintColor: colors.g_red,
+				tabBarActiveBackgroundColor: colors.g_black,
+				tabBarInactiveBackgroundColor: colors.g_transparent,
+				tabBarItemStyle: {
+					borderRadius: 8,
+				},
 			})}
 		>
 			<TabController.Screen

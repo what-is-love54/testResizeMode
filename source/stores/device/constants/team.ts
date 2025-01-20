@@ -1,0 +1,86 @@
+/** @format */
+
+import {TTeam} from '~/types';
+
+export const teamData: Array<TTeam> = [
+	{
+		id: 222,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 223,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 224,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 225,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 226,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 227,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 228,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 229,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 220,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+	{
+		id: 221,
+		homeTeamName: '',
+		awayTeamName: '',
+		homeTeamIcon: '',
+		awayTeamIcon: '',
+		playTime: new Date(),
+	},
+];

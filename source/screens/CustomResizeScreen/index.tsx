@@ -1,21 +1,76 @@
 /** @format */
 
-import React from 'react';
-import {Text, Button} from 'react-native';
+import React, {useCallback, useEffect} from 'react';
+import {StyleSheet, FlatList} from 'react-native';
+import {observer} from 'mobx-react';
 // -----------------------------------------------------------------------------
-import {useNavigate} from '~/hooks';
-import {Insets} from '~/components';
+import {useOrientation, useStores} from '~/hooks';
+import {Insets, VerticalSeparatorView} from '~/components';
+import {TTeam} from '~/types';
+import {dateFormatHelper} from '~/utils';
+import {deviceOrientation} from '~/constants';
+// -----------------------------------------------------------------------------
+import {EventsViewItem} from './components';
 
-export const CustomResizeScreen = () => {
-	const {navigate} = useNavigate();
+export const CustomResizeScreen = observer(() => {
+	const {deviceStore} = useStores();
+	const orientation = useOrientation();
+
+	const {pastEvent} = deviceStore;
+
+	const handleRenderResultEvent = useCallback(
+		({item}: {item: TTeam}) => {
+			const {minutes, date, time, dayName, timeHint} = dateFormatHelper(
+				`${item.playTime}`,
+			);
+
+			return (
+				<EventsViewItem
+					orientation={orientation}
+					homeTeamIcon={item.homeTeamIcon}
+					homeTeamName={item.homeTeamName}
+					awayTeamIcon={item.awayTeamIcon}
+					awayTeamName={item.awayTeamName}
+					date={date}
+					fullTime={`${time}:${minutes} ${timeHint}`}
+					dayName={dayName}
+				/>
+			);
+		},
+		[orientation],
+	);
+
+	// eslint-disable-next-line max-len
+	const handleKeyExtractor = useCallback((item: TTeam) => String(item.id), []);
+
+	useEffect(() => {
+		deviceStore.getPastEvent();
+	}, [deviceStore]);
 
 	return (
-		<Insets>
-			<Text>CustomResizeScreen</Text>
-			<Button
-				title="Go to Details"
-				onPress={() => navigate('Details')}
+		<Insets
+			isBotInset={false}
+			isTopInset={false}
+		>
+			<VerticalSeparatorView />
+
+			<FlatList
+				key={orientation}
+				data={pastEvent}
+				numColumns={orientation === deviceOrientation.landscape ? 2 : 1}
+				renderItem={handleRenderResultEvent}
+				keyExtractor={handleKeyExtractor}
+				contentContainerStyle={styles.container}
 			/>
 		</Insets>
 	);
-};
+});
+
+const styles = StyleSheet.create({
+	container: {
+		paddingHorizontal: 16,
+	},
+	columns: {
+		columnGap: 16,
+	},
+});
