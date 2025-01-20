@@ -2,7 +2,7 @@
 
 module.exports = {
 	root: true,
-	extends: ['prettier', '@react-native'],
+	extends: ['@react-native', 'prettier', 'expo'],
 	env: {
 		browser: true,
 		es2021: true,
@@ -42,5 +42,5 @@ module.exports = {
 		],
 		'react/jsx-no-undef': ['warn', {allowGlobals: true}],
 	},
-	ignorePatterns: ['/dist/*', 'node_modules'],
+	ignorePatterns: ['node_modules'],
 };
